@@ -1,0 +1,17 @@
+Headers := (
+  "guess" := "666",
+  "version" := 17
+)
+
+Params := (
+  "param1" := "123",
+  "param2" := 555,
+  "param3" := true,
+  "param4" := 3.1415926
+)
+
+GET >> "http://localhost:18080/test/events"
+
+Assert(code === 200)
+Assert(body.decode("keyB") === "valueB")
+Assert(body.decode("keyC").decode("keyC2") === "valueC2")

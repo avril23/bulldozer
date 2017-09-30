@@ -4,7 +4,7 @@
 
 ### Syntax ###
 #### Params(Optional) ####
-```
+```json
 Params := (
     "key1" := "string value",
     "key2" := 123
@@ -13,7 +13,7 @@ Params := (
 max count of "Params" keys is 22
 
 #### Headers(Optional) ####
-```
+```json
 Headers := (
     "Content-Type" := "application/json",
     "UserId" := 100
