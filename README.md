@@ -1,10 +1,10 @@
-# Bulldozer #
+# Bulldozer
 
-## a REST API test framework ##
+## a test framework for REST API
 
-### Syntax ###
-#### Params(Optional) ####
-```json
+### Syntax
+#### Params(Optional)
+```scala
 Params := (
     "key1" := "string value",
     "key2" := 123
@@ -12,8 +12,8 @@ Params := (
 ```
 max count of "Params" keys is 22
 
-#### Headers(Optional) ####
-```json
+#### Headers(Optional)
+```scala
 Headers := (
     "Content-Type" := "application/json",
     "UserId" := 100
@@ -21,15 +21,26 @@ Headers := (
 ```
 max count of "Headers" keys is 22
 
-#### Request ####
-```
-GET >> "/ss/wsevent"
+#### Request
+```scala
+GET >> "/your/rest/api"
 ```
 
-#### Assert ####
+#### Response
+```json
+{
+    "keyA": "valueA",
+    "keyB": "valueB",
+    "keyC": {
+        "keyC1": "valueC1",
+        "keyC2": "valueC2"
+    }
+}
 ```
-(Assert code) === 200
-(Assert body) === "OK"
-(Assert body).asJson("code") === "0"
-(Assert body).asJson.size === 5
+
+#### Assert
+``` scala
+Assert(code === 200)
+Assert(body.decode("keyB") === "valueB")
+Assert(body.decode("keyC").decode("keyC2") === "valueC2")
 ```
