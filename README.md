@@ -1,6 +1,6 @@
 # Bulldozer
 
-## a test framework for REST API
+## a test framework based on DSL for REST API
 
 ### Syntax
 #### Params(Optional)
