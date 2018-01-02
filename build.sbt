@@ -83,5 +83,3 @@ lazy val root = (project in file("."))
 
 // Commands
 addCommandAlias("root", ";project root")
-addCommandAlias("stonehenge", ";project stonehenge")
-addCommandAlias("pebble", ";project pebble")
